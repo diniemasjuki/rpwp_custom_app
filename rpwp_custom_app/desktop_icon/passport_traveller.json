@@ -1,0 +1,27 @@
+{
+ "app": "rpwp_custom_app",
+ "bg_color": "blue",
+ "creation": "2026-04-22 10:02:11.534396",
+ "docstatus": 0,
+ "doctype": "Desktop Icon",
+ "hidden": 0,
+ "icon_type": "App",
+ "idx": 9999,
+ "label": "Passport Traveller",
+ "link": "/desk/passport-traveller",
+ "link_type": "External",
+ "modified": "2026-05-19 09:22:21.018928",
+ "modified_by": "Administrator",
+ "name": "Passport Traveller",
+ "owner": "Administrator",
+ "restrict_removal": 1,
+ "roles": [
+  {
+   "role": "Tour Manager"
+  },
+  {
+   "role": "Tour Operator"
+  }
+ ],
+ "standard": 1
+}

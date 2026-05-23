@@ -1,0 +1,106 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "field:registration_number",
+ "creation": "2026-05-23 10:49:36.102942",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "registration_number",
+  "purchase_cost",
+  "section_break_wzae",
+  "attached_vehicle",
+  "column_break_iwzf",
+  "vehicle_nickname",
+  "vehicle_fuel",
+  "brand",
+  "model"
+ ],
+ "fields": [
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "registration_number",
+   "fieldtype": "Data",
+   "label": "Registration Number",
+   "unique": 1
+  },
+  {
+   "fieldname": "purchase_cost",
+   "fieldtype": "Currency",
+   "label": "Purchase Cost"
+  },
+  {
+   "fieldname": "section_break_wzae",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "attached_vehicle",
+   "fieldtype": "Link",
+   "label": "Attached Vehicle",
+   "options": "Kenderaan RPWP"
+  },
+  {
+   "fieldname": "column_break_iwzf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "attached_vehicle.vehicle_name",
+   "fieldname": "vehicle_nickname",
+   "fieldtype": "Read Only",
+   "is_virtual": 1,
+   "label": "Vehicle Nickname"
+  },
+  {
+   "fetch_from": "attached_vehicle.vehicle_fuel",
+   "fieldname": "vehicle_fuel",
+   "fieldtype": "Read Only",
+   "is_virtual": 1,
+   "label": "Vehicle Fuel"
+  },
+  {
+   "fetch_from": "attached_vehicle.vehicle_manufacturer",
+   "fieldname": "brand",
+   "fieldtype": "Read Only",
+   "is_virtual": 1,
+   "label": "Manufacturer"
+  },
+  {
+   "fetch_from": "attached_vehicle.vehicle_model",
+   "fieldname": "model",
+   "fieldtype": "Read Only",
+   "is_virtual": 1,
+   "label": "Model"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-05-23 10:59:57.089898",
+ "modified_by": "Administrator",
+ "module": "RPWP Fleet",
+ "name": "Nombor Kenderaan",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "registration_number"
+}

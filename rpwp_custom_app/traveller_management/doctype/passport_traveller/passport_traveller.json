@@ -1,0 +1,466 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "hash",
+ "creation": "2026-05-16 03:12:44.791439",
+ "default_view": "List",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "sec1",
+  "firstname",
+  "lastname",
+  "fullname_format",
+  "column_break_fbbo",
+  "email",
+  "phone",
+  "sec2",
+  "full_name",
+  "nationality",
+  "ic_no",
+  "passport_no",
+  "gender",
+  "date_of_birth",
+  "passport_expired",
+  "validity",
+  "passport_checked",
+  "passport_is_submitted",
+  "column_break_rvfp",
+  "imageviewer",
+  "passport_image",
+  "sec3",
+  "age",
+  "column_break_xeko",
+  "age_categ",
+  "column_break_khwi",
+  "titlesalute",
+  "sec4",
+  "address_street",
+  "column_break_opak",
+  "address_city",
+  "address_postcode",
+  "address_state",
+  "address_country",
+  "trip_information_tab",
+  "sec5",
+  "partner_relationship",
+  "column_break_ldib",
+  "partner_fullname",
+  "sec6",
+  "trip_name",
+  "trip_package",
+  "trip_group",
+  "chat_link",
+  "column_break_ouwv",
+  "pnr_no",
+  "ticket_type",
+  "departure_date",
+  "airline",
+  "flight_itinerary",
+  "flight_info_sent",
+  "sec7",
+  "cabin_type",
+  "cabin_occupancy",
+  "room_category_code",
+  "column_break_ujlw",
+  "room_name",
+  "delegate_no",
+  "guest_no"
+ ],
+ "fields": [
+  {
+   "fieldname": "sec1",
+   "fieldtype": "Section Break",
+   "label": "Traveller's Name"
+  },
+  {
+   "fieldname": "firstname",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "First Name",
+   "options": "Name",
+   "read_only_depends_on": "eval:doc.passport_checked",
+   "reqd": 1
+  },
+  {
+   "fieldname": "lastname",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Last Name",
+   "read_only_depends_on": "eval:doc.passport_checked",
+   "reqd": 1
+  },
+  {
+   "default": "First Name + Last Name",
+   "fieldname": "fullname_format",
+   "fieldtype": "Select",
+   "label": "Full Name Format",
+   "options": "First Name + Last Name\nLast Name + First Name",
+   "read_only_depends_on": "eval:doc.passport_checked"
+  },
+  {
+   "fieldname": "column_break_fbbo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "sec2",
+   "fieldtype": "Section Break",
+   "label": "Passport Information"
+  },
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "label": "Full Name",
+   "options": "Name",
+   "read_only": 1,
+   "read_only_depends_on": "eval:doc.passport_checked"
+  },
+  {
+   "fieldname": "nationality",
+   "fieldtype": "Link",
+   "label": "Nationality",
+   "options": "Country",
+   "read_only_depends_on": "eval:doc.passport_checked"
+  },
+  {
+   "fieldname": "ic_no",
+   "fieldtype": "Data",
+   "label": "ID / IC / Mykad",
+   "read_only_depends_on": "eval:doc.passport_checked"
+  },
+  {
+   "fieldname": "passport_no",
+   "fieldtype": "Data",
+   "label": "Passport No.",
+   "read_only_depends_on": "eval:doc.passport_checked"
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "label": "Gender",
+   "options": "\nMale\nFemale",
+   "read_only_depends_on": "eval:doc.passport_checked"
+  },
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date of Birth",
+   "read_only_depends_on": "eval:doc.passport_checked"
+  },
+  {
+   "fieldname": "passport_expired",
+   "fieldtype": "Date",
+   "label": "Passport Expiry",
+   "read_only_depends_on": "eval:doc.passport_checked"
+  },
+  {
+   "fieldname": "validity",
+   "fieldtype": "Data",
+   "label": "Passport Validity",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "passport_checked",
+   "fieldtype": "Check",
+   "label": "Passport Detail Checked"
+  },
+  {
+   "default": "0",
+   "fieldname": "passport_is_submitted",
+   "fieldtype": "Check",
+   "label": "Passport is Submitted"
+  },
+  {
+   "fieldname": "column_break_rvfp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "imageviewer",
+   "fieldtype": "Image",
+   "is_virtual": 1,
+   "options": "passport_image"
+  },
+  {
+   "fieldname": "passport_image",
+   "fieldtype": "Attach Image",
+   "label": "Passport Image"
+  },
+  {
+   "fieldname": "sec3",
+   "fieldtype": "Section Break",
+   "label": "Auto Defined Value"
+  },
+  {
+   "fieldname": "age",
+   "fieldtype": "Int",
+   "label": "Age",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_xeko",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "age_categ",
+   "fieldtype": "Select",
+   "label": "Age Category",
+   "options": "\nAdult\nChild\nInfant\nYouth\nInvalid",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_khwi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "titlesalute",
+   "fieldtype": "Select",
+   "label": "Title Salutation",
+   "options": "\nMR\nMS\nMSTR\nMISS",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sec4",
+   "fieldtype": "Section Break",
+   "label": "Billing Address"
+  },
+  {
+   "fieldname": "address_street",
+   "fieldtype": "Small Text",
+   "label": "Address Street"
+  },
+  {
+   "fieldname": "column_break_opak",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "address_city",
+   "fieldtype": "Data",
+   "label": "City"
+  },
+  {
+   "fieldname": "address_postcode",
+   "fieldtype": "Data",
+   "label": "Postcode"
+  },
+  {
+   "fieldname": "address_state",
+   "fieldtype": "Data",
+   "label": "State"
+  },
+  {
+   "fieldname": "address_country",
+   "fieldtype": "Link",
+   "label": "Country",
+   "options": "Country"
+  },
+  {
+   "fieldname": "trip_information_tab",
+   "fieldtype": "Tab Break",
+   "label": "Trip Information"
+  },
+  {
+   "fieldname": "sec5",
+   "fieldtype": "Section Break",
+   "label": "Travel Buddies"
+  },
+  {
+   "fieldname": "partner_relationship",
+   "fieldtype": "Select",
+   "label": "Partner / Sponsor Relationship",
+   "options": "\nI am solo traveller\nI am the husband\nI am the wife of\nI am the children of\nI am the parent of\nI am a sibling of\nI am a friend of\nOther"
+  },
+  {
+   "fieldname": "column_break_ldib",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:!(doc.partner_relationship===\"I am solo traveller\" \n       || doc.partner_relationship===\"I am the husband\" \n       || doc.partner_relationship===\"I am the main contact\")",
+   "fieldname": "partner_fullname",
+   "fieldtype": "Data",
+   "label": "Partner / Sponsor Full Name"
+  },
+  {
+   "fieldname": "sec6",
+   "fieldtype": "Section Break",
+   "label": "Trip Info"
+  },
+  {
+   "fieldname": "trip_name",
+   "fieldtype": "Data",
+   "label": "Trip Name",
+   "read_only_depends_on": "eval:doc.flight_info_sent"
+  },
+  {
+   "fieldname": "trip_package",
+   "fieldtype": "Data",
+   "label": "Trip Package Type",
+   "read_only_depends_on": "eval:doc.flight_info_sent"
+  },
+  {
+   "fieldname": "trip_group",
+   "fieldtype": "Data",
+   "label": "Trip Group Name",
+   "read_only_depends_on": "eval:doc.flight_info_sent"
+  },
+  {
+   "fieldname": "column_break_ouwv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "pnr_no",
+   "fieldtype": "Data",
+   "label": "PNR Number",
+   "read_only_depends_on": "eval:doc.flight_info_sent"
+  },
+  {
+   "fieldname": "departure_date",
+   "fieldtype": "Data",
+   "label": "Flight Departure Date",
+   "read_only_depends_on": "eval:doc.flight_info_sent"
+  },
+  {
+   "fieldname": "airline",
+   "fieldtype": "Select",
+   "label": "Airline",
+   "options": "\nEmirates Airline\nTurkish Airlines\nQatar Airways\nSaudi Airline\nOman AIr\nOther",
+   "read_only_depends_on": "eval:doc.flight_info_sent"
+  },
+  {
+   "fieldname": "flight_itinerary",
+   "fieldtype": "Text Editor",
+   "label": "Flight Itinerary",
+   "read_only_depends_on": "eval:doc.flight_info_sent"
+  },
+  {
+   "fieldname": "sec7",
+   "fieldtype": "Section Break",
+   "label": "Cabin And Accomodation"
+  },
+  {
+   "fieldname": "cabin_type",
+   "fieldtype": "Select",
+   "label": "Cabin Type",
+   "options": "\nBalcony Cabin\nSuperior Balcony Cabin\nSeaview Cabin\nSuperior Seaview Cabin\nInterior Cabin\nKhuzama Presidential Villa\nKhuzama Superior Suite\nOthers"
+  },
+  {
+   "fieldname": "cabin_occupancy",
+   "fieldtype": "Select",
+   "label": "Cabin Occupancy",
+   "options": "\nSingle\nDouble\nTriple\nQuad\nFive\nSix"
+  },
+  {
+   "fieldname": "column_break_ujlw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "room_name",
+   "fieldtype": "Data",
+   "label": "State Room"
+  },
+  {
+   "fieldname": "room_category_code",
+   "fieldtype": "Select",
+   "label": "Room Category Code",
+   "options": "\nPV\nSS\nBSC\nBC\nIC\nSC"
+  },
+  {
+   "fieldname": "delegate_no",
+   "fieldtype": "Int",
+   "label": "Room Delegate No"
+  },
+  {
+   "fieldname": "guest_no",
+   "fieldtype": "Int",
+   "label": "Guest No"
+  },
+  {
+   "fieldname": "chat_link",
+   "fieldtype": "Data",
+   "label": "Whatsapp Group",
+   "read_only_depends_on": "eval:doc.flight_info_sent"
+  },
+  {
+   "default": "0",
+   "fieldname": "flight_info_sent",
+   "fieldtype": "Check",
+   "label": "Flight Info Sent"
+  },
+  {
+   "fieldname": "ticket_type",
+   "fieldtype": "Select",
+   "label": "Ticket Type",
+   "options": "\nGIT\nFIT",
+   "read_only_depends_on": "eval:doc.flight_info_sent"
+  }
+ ],
+ "grid_page_length": 50,
+ "image_field": "passport_image",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-05-23 19:22:32.111673",
+ "modified_by": "Administrator",
+ "module": "Traveller Management",
+ "name": "Passport Traveller",
+ "naming_rule": "Random",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Tour Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Tour Operator",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "protect_attached_files": 1,
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "search_fields": "full_name,ic_no,passport_no",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "full_name"
+}
