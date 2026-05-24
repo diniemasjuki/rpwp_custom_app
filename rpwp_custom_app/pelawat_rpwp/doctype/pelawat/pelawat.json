@@ -1,0 +1,120 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "creation": "2026-05-24 10:35:50.243393",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "full_name",
+  "id_no",
+  "column_break_vkgg",
+  "view_visitor",
+  "visitor_image",
+  "section_break_hsbu",
+  "first_name",
+  "middle_name",
+  "last_name",
+  "column_break_ouez",
+  "company",
+  "email",
+  "phone"
+ ],
+ "fields": [
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "label": "Full Name"
+  },
+  {
+   "fieldname": "id_no",
+   "fieldtype": "Data",
+   "label": "IC / Mykad / National ID",
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_vkgg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "view_visitor",
+   "fieldtype": "Image",
+   "is_virtual": 1,
+   "options": "visitor_image"
+  },
+  {
+   "fieldname": "visitor_image",
+   "fieldtype": "Attach Image",
+   "label": "Visitor Photo"
+  },
+  {
+   "fieldname": "section_break_hsbu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "label": "First Name"
+  },
+  {
+   "fieldname": "middle_name",
+   "fieldtype": "Data",
+   "label": "Middle Name"
+  },
+  {
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "label": "Last Name"
+  },
+  {
+   "fieldname": "column_break_ouez",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Data",
+   "label": "Company"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone"
+  }
+ ],
+ "grid_page_length": 50,
+ "image_field": "visitor_image",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-05-24 13:14:00.255491",
+ "modified_by": "Administrator",
+ "module": "Pelawat RPWP",
+ "name": "Pelawat",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "protect_attached_files": 1,
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "search_fields": "id_no,full_name,phone,email",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "full_name"
+}

@@ -1,0 +1,181 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "VISITLOG.YY.MM.#####",
+ "creation": "2026-05-24 10:47:04.911760",
+ "default_view": "List",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "pelawat",
+  "id_no",
+  "column_break_pckh",
+  "first_name",
+  "middle_name",
+  "last_name",
+  "full_name",
+  "section_break_clyu",
+  "email",
+  "phone",
+  "company",
+  "column_break_lqpf",
+  "visitor_image",
+  "image_zqnv",
+  "section_break_jlml",
+  "checkintime",
+  "checkouttime",
+  "column_break_zxzr",
+  "purpose_or_event",
+  "location"
+ ],
+ "fields": [
+  {
+   "fieldname": "pelawat",
+   "fieldtype": "Link",
+   "label": "Pelawat",
+   "options": "Pelawat"
+  },
+  {
+   "fieldname": "column_break_pckh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "pelawat.first_name",
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "label": "First Name",
+   "options": "Name"
+  },
+  {
+   "fetch_from": "pelawat.middle_name",
+   "fieldname": "middle_name",
+   "fieldtype": "Data",
+   "label": "Middle Name",
+   "options": "Name"
+  },
+  {
+   "fetch_from": "pelawat.last_name",
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "label": "Last Name",
+   "options": "Name"
+  },
+  {
+   "fetch_from": "pelawat.full_name",
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "label": "Full Name",
+   "options": "Name"
+  },
+  {
+   "fieldname": "section_break_clyu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "pelawat.email",
+   "fetch_if_empty": 1,
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email"
+  },
+  {
+   "fetch_from": "pelawat.phone",
+   "fetch_if_empty": 1,
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone",
+   "options": "Name"
+  },
+  {
+   "fetch_from": "pelawat.company",
+   "fetch_if_empty": 1,
+   "fieldname": "company",
+   "fieldtype": "Data",
+   "label": "Company",
+   "options": "Name"
+  },
+  {
+   "fieldname": "column_break_lqpf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "pelawat.visitor_image",
+   "fieldname": "visitor_image",
+   "fieldtype": "Attach Image"
+  },
+  {
+   "fieldname": "image_zqnv",
+   "fieldtype": "Image",
+   "is_virtual": 1,
+   "options": "visitor_image"
+  },
+  {
+   "fieldname": "section_break_jlml",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "checkintime",
+   "fieldtype": "Datetime",
+   "label": "Check In Time"
+  },
+  {
+   "fieldname": "checkouttime",
+   "fieldtype": "Datetime",
+   "label": "Check Out Time"
+  },
+  {
+   "fieldname": "column_break_zxzr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "purpose_or_event",
+   "fieldtype": "Data",
+   "label": "Purpose or Event"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "label": "Location"
+  },
+  {
+   "fetch_from": "pelawat.id_no",
+   "fetch_if_empty": 1,
+   "fieldname": "id_no",
+   "fieldtype": "Data",
+   "label": "IC / Mykad / National ID",
+   "options": "Name"
+  }
+ ],
+ "grid_page_length": 50,
+ "image_field": "visitor_image",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-05-24 13:12:52.671433",
+ "modified_by": "Administrator",
+ "module": "Pelawat RPWP",
+ "name": "Log Pelawat",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "full_name"
+}
