@@ -18,12 +18,9 @@ class LogPelawat(Document):
 		checkouttime: DF.Datetime | None
 		company: DF.Data | None
 		email: DF.Data | None
-		first_name: DF.Data | None
 		full_name: DF.Data | None
 		id_no: DF.Data | None
-		last_name: DF.Data | None
 		location: DF.Data | None
-		middle_name: DF.Data | None
 		pelawat: DF.Link | None
 		phone: DF.Data | None
 		purpose_or_event: DF.Data | None

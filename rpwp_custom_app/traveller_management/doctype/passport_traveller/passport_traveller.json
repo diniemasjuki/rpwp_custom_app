@@ -2,7 +2,7 @@
  "actions": [],
  "allow_bulk_edit": 1,
  "allow_rename": 1,
- "autoname": "hash",
+ "autoname": "field:full_name",
  "creation": "2026-05-16 03:12:44.791439",
  "default_view": "List",
  "doctype": "DocType",
@@ -126,7 +126,8 @@
    "label": "Full Name",
    "options": "Name",
    "read_only": 1,
-   "read_only_depends_on": "eval:doc.passport_checked"
+   "read_only_depends_on": "eval:doc.passport_checked",
+   "unique": 1
   },
   {
    "fieldname": "nationality",
@@ -411,11 +412,11 @@
  "image_field": "passport_image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-05-23 19:22:32.111673",
+ "modified": "2026-05-26 00:22:29.784399",
  "modified_by": "Administrator",
  "module": "Traveller Management",
  "name": "Passport Traveller",
- "naming_rule": "Random",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {

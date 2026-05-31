@@ -5,7 +5,7 @@
 from frappe.model.document import Document
 
 
-class Pelawat(Document):
+class BookingTraveller(Document):
 	# begin: auto-generated types
 	# This code is auto-generated. Do not modify anything in this block.
 
@@ -13,17 +13,10 @@ class Pelawat(Document):
 
 	if TYPE_CHECKING:
 		from frappe.types import DF
+		from rpwp_custom_app.traveller_management.doctype.booking_x_traveller.booking_x_traveller import BookingXTraveller
 
-		company: DF.Data | None
-		email: DF.Data | None
-		first_name: DF.Data | None
-		full_name: DF.Data | None
-		id_no: DF.Data | None
-		last_name: DF.Data | None
-		middle_name: DF.Data | None
-		phone: DF.Data | None
-		status: DF.Literal["active", "passive", "disabled"]
-		visitor_image: DF.AttachImage | None
+		customer_booking: DF.Link | None
+		list_traveller: DF.Table[BookingXTraveller]
 	# end: auto-generated types
 
 	pass

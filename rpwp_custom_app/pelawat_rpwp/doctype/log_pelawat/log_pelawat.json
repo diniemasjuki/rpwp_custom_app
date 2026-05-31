@@ -9,11 +9,8 @@
  "engine": "InnoDB",
  "field_order": [
   "pelawat",
-  "id_no",
   "column_break_pckh",
-  "first_name",
-  "middle_name",
-  "last_name",
+  "id_no",
   "full_name",
   "section_break_clyu",
   "email",
@@ -41,28 +38,8 @@
    "fieldtype": "Column Break"
   },
   {
-   "fetch_from": "pelawat.first_name",
-   "fieldname": "first_name",
-   "fieldtype": "Data",
-   "label": "First Name",
-   "options": "Name"
-  },
-  {
-   "fetch_from": "pelawat.middle_name",
-   "fieldname": "middle_name",
-   "fieldtype": "Data",
-   "label": "Middle Name",
-   "options": "Name"
-  },
-  {
-   "fetch_from": "pelawat.last_name",
-   "fieldname": "last_name",
-   "fieldtype": "Data",
-   "label": "Last Name",
-   "options": "Name"
-  },
-  {
    "fetch_from": "pelawat.full_name",
+   "fetch_if_empty": 1,
    "fieldname": "full_name",
    "fieldtype": "Data",
    "label": "Full Name",
@@ -82,11 +59,10 @@
   },
   {
    "fetch_from": "pelawat.phone",
-   "fetch_if_empty": 1,
    "fieldname": "phone",
    "fieldtype": "Data",
    "label": "Phone",
-   "options": "Name"
+   "options": "Phone"
   },
   {
    "fetch_from": "pelawat.company",
@@ -151,8 +127,14 @@
  "grid_page_length": 50,
  "image_field": "visitor_image",
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2026-05-24 13:12:52.671433",
+ "links": [
+  {
+   "link_doctype": "Pelawat",
+   "link_fieldname": "id_no",
+   "table_fieldname": "id_no"
+  }
+ ],
+ "modified": "2026-05-30 15:51:06.407703",
  "modified_by": "Administrator",
  "module": "Pelawat RPWP",
  "name": "Log Pelawat",

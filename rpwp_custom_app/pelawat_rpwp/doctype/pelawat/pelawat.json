@@ -2,12 +2,14 @@
  "actions": [],
  "allow_bulk_edit": 1,
  "allow_rename": 1,
+ "autoname": "field:id_no",
  "creation": "2026-05-24 10:35:50.243393",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "full_name",
   "id_no",
+  "status",
   "column_break_vkgg",
   "view_visitor",
   "visitor_image",
@@ -24,7 +26,8 @@
   {
    "fieldname": "full_name",
    "fieldtype": "Data",
-   "label": "Full Name"
+   "label": "Full Name",
+   "unique": 1
   },
   {
    "fieldname": "id_no",
@@ -83,17 +86,30 @@
   {
    "fieldname": "phone",
    "fieldtype": "Data",
-   "label": "Phone"
+   "label": "Phone",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "status",
+   "options": "active\npassive\ndisabled"
   }
  ],
  "grid_page_length": 50,
  "image_field": "visitor_image",
- "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2026-05-24 13:14:00.255491",
+ "links": [
+  {
+   "link_doctype": "Log Pelawat",
+   "link_fieldname": "id_no",
+   "table_fieldname": "id_no"
+  }
+ ],
+ "modified": "2026-05-30 15:49:24.470643",
  "modified_by": "Administrator",
  "module": "Pelawat RPWP",
  "name": "Pelawat",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
@@ -115,6 +131,15 @@
  "search_fields": "id_no,full_name,phone,email",
  "sort_field": "creation",
  "sort_order": "DESC",
- "states": [],
+ "states": [
+  {
+   "color": "Blue",
+   "title": "active"
+  },
+  {
+   "color": "Red",
+   "title": "passive"
+  }
+ ],
  "title_field": "full_name"
 }

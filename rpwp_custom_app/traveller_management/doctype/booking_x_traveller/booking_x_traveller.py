@@ -5,7 +5,7 @@
 from frappe.model.document import Document
 
 
-class Pelawat(Document):
+class BookingXTraveller(Document):
 	# begin: auto-generated types
 	# This code is auto-generated. Do not modify anything in this block.
 
@@ -14,16 +14,12 @@ class Pelawat(Document):
 	if TYPE_CHECKING:
 		from frappe.types import DF
 
-		company: DF.Data | None
-		email: DF.Data | None
-		first_name: DF.Data | None
-		full_name: DF.Data | None
-		id_no: DF.Data | None
-		last_name: DF.Data | None
-		middle_name: DF.Data | None
-		phone: DF.Data | None
-		status: DF.Literal["active", "passive", "disabled"]
-		visitor_image: DF.AttachImage | None
+		parent: DF.Data
+		parentfield: DF.Data
+		parenttype: DF.Data
+		traveller_name: DF.Data | None
+		traveller_passport: DF.Link | None
+		traveller_passport_no: DF.Data | None
 	# end: auto-generated types
 
 	pass
