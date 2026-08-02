@@ -1,0 +1,77 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "vendor_code/state_room_no/.#",
+ "creation": "2026-06-11 07:38:25.931767",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_vyzf",
+  "vendor_code",
+  "state_room_no",
+  "column_break_mwek",
+  "room_category_code",
+  "room_category"
+ ],
+ "fields": [
+  {
+   "default": "AC01",
+   "fieldname": "vendor_code",
+   "fieldtype": "Data",
+   "label": "Vendor Code",
+   "unique": 1
+  },
+  {
+   "fieldname": "state_room_no",
+   "fieldtype": "Data",
+   "label": "State Room No"
+  },
+  {
+   "fieldname": "column_break_mwek",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "room_category_code",
+   "fieldtype": "Data",
+   "label": "Room Category Code"
+  },
+  {
+   "fieldname": "room_category",
+   "fieldtype": "Data",
+   "label": "Room Category"
+  },
+  {
+   "fieldname": "section_break_vyzf",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-06-11 08:16:08.367666",
+ "modified_by": "Administrator",
+ "module": "Traveller Management",
+ "name": "Room",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

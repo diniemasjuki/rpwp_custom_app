@@ -1,0 +1,426 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_import": 1,
+ "autoname": "AROYA.-.YY.MM.DD.-.####.",
+ "creation": "2026-06-11 02:18:10.589310",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_agx7",
+  "amended_from",
+  "voyage_no",
+  "ship",
+  "trip_group_name",
+  "column_break_fnaq",
+  "sail_date_from",
+  "sail_date_to",
+  "package_types",
+  "section_break_dwfh",
+  "stateroom_category",
+  "stateroom_no",
+  "column_break_joup",
+  "delegate_no",
+  "guest_no",
+  "section_break_bzjn",
+  "select_traveller",
+  "column_break_cpev",
+  "section_break_wjff",
+  "id_no",
+  "passport_no",
+  "first_name",
+  "last_name",
+  "gender",
+  "birth_date",
+  "partner_name",
+  "room_partner_relationship",
+  "column_break_tsqv",
+  "passport_image",
+  "image_hrvp",
+  "section_break_undr",
+  "column_break_fgzn",
+  "residency",
+  "email",
+  "reservation_contact",
+  "column_break_biya",
+  "intlcode",
+  "intlcode_country",
+  "telephone",
+  "section_break_vdbc",
+  "language",
+  "country_of_birth",
+  "column_break_htmq",
+  "city",
+  "state",
+  "column_break_wysr",
+  "localized_first_name",
+  "localized_last_name",
+  "column_break_bomq",
+  "sms_can_contact",
+  "readytosend"
+ ],
+ "fields": [
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_agx7",
+   "fieldtype": "Section Break",
+   "label": "Preset Info"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Rooming Aroya",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "voyage_no",
+   "fieldtype": "Int",
+   "label": "Voyage No",
+   "read_only": 1
+  },
+  {
+   "default": "AC01",
+   "fieldname": "ship",
+   "fieldtype": "Data",
+   "label": "Ship",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_fnaq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sail_date_from",
+   "fieldtype": "Date",
+   "label": "Sail Date From",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sail_date_to",
+   "fieldtype": "Date",
+   "label": "Sail Date To",
+   "read_only": 1
+  },
+  {
+   "fieldname": "package_types",
+   "fieldtype": "Data",
+   "label": "Package Types",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_dwfh",
+   "fieldtype": "Section Break",
+   "label": "Room Arrangement"
+  },
+  {
+   "fieldname": "stateroom_category",
+   "fieldtype": "Autocomplete",
+   "in_standard_filter": 1,
+   "label": "Stateroom Category",
+   "options": "\nBC\nSC\nIC\nBSC\nSS\nPV",
+   "read_only": 1
+  },
+  {
+   "fieldname": "stateroom_no",
+   "fieldtype": "Data",
+   "label": "Stateroom No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_joup",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "delegate_no",
+   "fieldtype": "Data",
+   "label": "Delegate No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "guest_no",
+   "fieldtype": "Data",
+   "label": "Guest No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_wjff",
+   "fieldtype": "Section Break",
+   "label": "Passenger Information"
+  },
+  {
+   "default": "FALSE",
+   "fieldname": "reservation_contact",
+   "fieldtype": "Data",
+   "label": "Reservation Contact",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "select_traveller.lastname",
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "label": "Last Name *",
+   "options": "Name"
+  },
+  {
+   "fetch_from": "select_traveller.firstname",
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "label": "First Name *",
+   "options": "Name"
+  },
+  {
+   "fetch_from": "select_traveller.gender",
+   "fieldname": "gender",
+   "fieldtype": "Data",
+   "label": "Gender *"
+  },
+  {
+   "fetch_from": "select_traveller.date_of_birth",
+   "fieldname": "birth_date",
+   "fieldtype": "Data",
+   "label": "Birth Date *"
+  },
+  {
+   "fetch_from": "select_traveller.nationality",
+   "fieldname": "residency",
+   "fieldtype": "Data",
+   "label": "Residency"
+  },
+  {
+   "fetch_from": "select_traveller.email",
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email *",
+   "options": "Email"
+  },
+  {
+   "fieldname": "column_break_biya",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "select_traveller.country_code",
+   "fieldname": "intlcode",
+   "fieldtype": "Data",
+   "label": "Intl.Code *"
+  },
+  {
+   "fetch_from": "select_traveller.phone_country",
+   "fieldname": "intlcode_country",
+   "fieldtype": "Data",
+   "label": "Intl.Code Country"
+  },
+  {
+   "fetch_from": "select_traveller.phone2",
+   "fieldname": "telephone",
+   "fieldtype": "Data",
+   "label": "Telephone *"
+  },
+  {
+   "default": "ENGLISH",
+   "fieldname": "language",
+   "fieldtype": "Data",
+   "label": "Language",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_vdbc",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "select_traveller.nationality",
+   "fieldname": "country_of_birth",
+   "fieldtype": "Data",
+   "label": "Country of Birth"
+  },
+  {
+   "fetch_from": "select_traveller.address_city",
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City *"
+  },
+  {
+   "fetch_from": "select_traveller.address_state",
+   "fieldname": "state",
+   "fieldtype": "Data",
+   "label": "State"
+  },
+  {
+   "fetch_from": "select_traveller.firstname",
+   "fieldname": "localized_first_name",
+   "fieldtype": "Data",
+   "label": "Localized First Name"
+  },
+  {
+   "fetch_from": "select_traveller.lastname",
+   "fieldname": "localized_last_name",
+   "fieldtype": "Data",
+   "label": "Localized Last Name"
+  },
+  {
+   "fieldname": "column_break_wysr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "FALSE",
+   "fieldname": "sms_can_contact",
+   "fieldtype": "Data",
+   "label": "SMS Can Contact",
+   "read_only": 1
+  },
+  {
+   "fieldname": "select_traveller",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Select Traveller",
+   "options": "Passport Traveller",
+   "print_hide": 1
+  },
+  {
+   "fieldname": "column_break_fgzn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_undr",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_tsqv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_bzjn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_htmq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_cpev",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "select_traveller.ic_no",
+   "fieldname": "id_no",
+   "fieldtype": "Data",
+   "label": "IC / Mykad / ID",
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_bomq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "readytosend",
+   "fieldtype": "Select",
+   "label": "Send Notification",
+   "options": "\nReady to Send\nUpdate Sent\n7 Day Reminder Sent\n2 Day Reminder Sent"
+  },
+  {
+   "fetch_from": "select_traveller.passport_image",
+   "fieldname": "passport_image",
+   "fieldtype": "Attach Image",
+   "hidden": 1
+  },
+  {
+   "fieldname": "image_hrvp",
+   "fieldtype": "Image",
+   "is_virtual": 1,
+   "options": "passport_image"
+  },
+  {
+   "fetch_from": "select_traveller.passport_no",
+   "fieldname": "passport_no",
+   "fieldtype": "Data",
+   "label": "Passport No",
+   "unique": 1
+  },
+  {
+   "fetch_from": "select_traveller.partner_fullname",
+   "fieldname": "partner_name",
+   "fieldtype": "Data",
+   "label": "Room Partner Name"
+  },
+  {
+   "fetch_from": "select_traveller.partner_relationship",
+   "fieldname": "room_partner_relationship",
+   "fieldtype": "Data",
+   "label": "Room Partner Relationship"
+  },
+  {
+   "fieldname": "trip_group_name",
+   "fieldtype": "Data",
+   "label": "Trip Group Name"
+  }
+ ],
+ "grid_page_length": 50,
+ "in_create": 1,
+ "links": [],
+ "modified": "2026-07-11 12:23:52.214333",
+ "modified_by": "Administrator",
+ "module": "Traveller Management",
+ "name": "Rooming Aroya",
+ "naming_rule": "Expression",
+ "nsm_parent_field": "parent_rooming_aroya",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "mask": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "mask": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Tour Manager",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "mask": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Tour Operator",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "protect_attached_files": 1,
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "search_fields": "stateroom_no,stateroom_category,guest_no,id_no",
+ "sort_field": "name",
+ "sort_order": "ASC",
+ "states": [],
+ "track_changes": 1
+}

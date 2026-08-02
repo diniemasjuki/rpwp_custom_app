@@ -1,0 +1,24 @@
+# Copyright (c) 2026, RPWP Developer Team and contributors
+# For license information, please see license.txt
+
+# import frappe
+from frappe.model.document import Document
+
+
+class Reservation(Document):
+	# begin: auto-generated types
+	# This code is auto-generated. Do not modify anything in this block.
+
+	from typing import TYPE_CHECKING
+
+	if TYPE_CHECKING:
+		from frappe.types import DF
+
+		flight_eticket: DF.Attach | None
+		flight_info: DF.Link | None
+		flight_reservation: DF.Link | None
+		traveller_info: DF.Link | None
+		trip_info: DF.Link | None
+	# end: auto-generated types
+
+	_DOCTYPE_NAME = "Reservation"

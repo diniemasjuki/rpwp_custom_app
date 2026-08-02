@@ -1,0 +1,39 @@
+{
+ "attach_files": "",
+ "attach_print": 0,
+ "channel": "SMS",
+ "condition_type": "Filters",
+ "creation": "2026-06-14 09:28:56.900737",
+ "datetime_changed": "modified",
+ "days_in_advance": 0,
+ "docstatus": 0,
+ "doctype": "Notification",
+ "document_type": "Passport Traveller",
+ "enabled": 1,
+ "event": "Value Change",
+ "filters": "[[\"Passport Traveller\",\"flight_announcement\",\"=\",\"Flight Retime\"]]",
+ "from_attach_field": "personal_eticket",
+ "idx": 0,
+ "is_standard": 1,
+ "message": "Hi {{ doc.firstname }},\nYour flight schedule has CHANGED!\nPlease check your email at {{ doc.email }} for more info.\n\nRegards\nRARECRUISE.",
+ "message_type": "Plain Text",
+ "minutes_offset": 10,
+ "modified": "2026-06-14 11:13:04.131619",
+ "modified_by": "Administrator",
+ "module": "Traveller Management",
+ "name": "RARECRUISE | FLIGHT RETIME | SMS",
+ "owner": "Administrator",
+ "property_value": "",
+ "recipients": [
+  {
+   "receiver_by_document_field": "phone"
+  }
+ ],
+ "send_system_notification": 0,
+ "send_to_all_assignees": 0,
+ "sender": "RARECRUISE",
+ "sender_email": "contact@rarecruise.com",
+ "set_property_after_alert": "",
+ "subject": "RARECRUISE | FLIGHT RETIME | SMS ALERT",
+ "value_changed": "flight_announcement"
+}

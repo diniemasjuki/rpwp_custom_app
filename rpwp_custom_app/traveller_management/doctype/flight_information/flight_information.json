@@ -1,0 +1,222 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "field:pnr_no",
+ "creation": "2026-06-08 15:35:45.837000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "pnr_no",
+  "airline",
+  "route_type",
+  "flight_title",
+  "column_break_igsl",
+  "departure_date",
+  "departure_airport",
+  "column_break_zras",
+  "return_date",
+  "return_airport",
+  "status",
+  "section_break_fwbu",
+  "ticket_type",
+  "flight_class",
+  "column_break_iylp",
+  "max_cabin_luggage",
+  "max_hand_luggage",
+  "column_break_qjse",
+  "max_passenger",
+  "min_passenger",
+  "section_break_skud",
+  "flight_itinerary"
+ ],
+ "fields": [
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "pnr_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "PNR Number",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "airline",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Airline",
+   "options": "\nQatar Airways\nEmirates Airline\nTurkish Airline\nAir Asia\nMalaysia Airline\nSingapore Airline",
+   "sort_options": 1
+  },
+  {
+   "fieldname": "route_type",
+   "fieldtype": "Select",
+   "label": "Route Type",
+   "options": "\nReturn Flight\nOne Way Flight\nMulti-City Flight"
+  },
+  {
+   "fieldname": "ticket_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Ticket Type",
+   "options": "\nGIT\nFIT"
+  },
+  {
+   "fieldname": "column_break_igsl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "flight_itinerary",
+   "fieldtype": "Text Editor",
+   "label": "Flight Itinerary"
+  },
+  {
+   "fieldname": "departure_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Departure Date"
+  },
+  {
+   "depends_on": "eval:(doc.route_type===\"Return Flight\"\n|| doc.route_type===\"Multi-City Flight\")",
+   "fieldname": "return_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Return Date",
+   "options": "doc.return_date"
+  },
+  {
+   "fieldname": "departure_airport",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Departure Airport",
+   "options": "\nKLIA 1 (KUL)\nKLIA 2 (KUL2)\nChangi (SIN)"
+  },
+  {
+   "depends_on": "eval:doc.route_type===\"Multi-City Flight\"",
+   "fieldname": "return_airport",
+   "fieldtype": "Data",
+   "label": "Return Airport"
+  },
+  {
+   "fieldname": "section_break_skud",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_zras",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_fwbu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.ticket_type===\"GIT\"",
+   "fieldname": "column_break_qjse",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.ticket_type===\"GIT\"",
+   "fieldname": "max_passenger",
+   "fieldtype": "Int",
+   "label": "Max Passenger"
+  },
+  {
+   "depends_on": "eval:doc.ticket_type===\"GIT\"",
+   "fieldname": "min_passenger",
+   "fieldtype": "Int",
+   "label": "Min Passenger"
+  },
+  {
+   "fieldname": "column_break_iylp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "flight_class",
+   "fieldtype": "Select",
+   "label": "Flight Class",
+   "options": "Economy\nEconomy Plus\nBusiness\nFirst"
+  },
+  {
+   "fieldname": "max_cabin_luggage",
+   "fieldtype": "Data",
+   "label": "Max Cabin Luggage "
+  },
+  {
+   "fieldname": "max_hand_luggage",
+   "fieldtype": "Data",
+   "label": "Max Hand Luggage"
+  },
+  {
+   "default": "Open",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Open\nTo Confirmed\nConfirmed\nCompleted"
+  },
+  {
+   "fieldname": "flight_title",
+   "fieldtype": "Data",
+   "label": "Flight Title"
+  }
+ ],
+ "grid_page_length": 50,
+ "links": [
+  {
+   "link_doctype": "Passport Traveller",
+   "link_fieldname": "pnr_no",
+   "table_fieldname": "pnr_no"
+  }
+ ],
+ "modified": "2026-06-10 00:50:41.946067",
+ "modified_by": "Administrator",
+ "module": "Traveller Management",
+ "name": "Flight Information",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Tour Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Tour Operator",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "protect_attached_files": 1,
+ "quick_entry": 1,
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "search_fields": "pnr_no",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

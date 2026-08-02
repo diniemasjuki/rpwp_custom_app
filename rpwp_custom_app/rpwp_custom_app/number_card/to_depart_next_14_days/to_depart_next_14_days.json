@@ -1,0 +1,23 @@
+{
+ "creation": "2026-06-09 00:00:21.548858",
+ "currency": "",
+ "docstatus": 0,
+ "doctype": "Number Card",
+ "document_type": "Flight Information",
+ "filters_json": "[[\"Flight Information\",\"departure_date\",\"Timespan\",\"next 14 days\"]]",
+ "function": "Count",
+ "idx": 0,
+ "is_public": 1,
+ "is_standard": 1,
+ "label": "All Flight To Depart Next 14 Days",
+ "modified": "2026-06-09 00:02:56.927814",
+ "modified_by": "Administrator",
+ "module": "RPWP Custom App",
+ "name": "To Depart Next 14 Days",
+ "owner": "Administrator",
+ "report_function": "Sum",
+ "show_full_number": 1,
+ "show_percentage_stats": 1,
+ "stats_time_interval": "Daily",
+ "type": "Document Type"
+}

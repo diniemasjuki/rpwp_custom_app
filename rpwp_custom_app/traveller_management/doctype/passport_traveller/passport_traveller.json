@@ -1,24 +1,20 @@
 {
  "actions": [],
  "allow_bulk_edit": 1,
+ "allow_guest_to_view": 1,
  "allow_rename": 1,
- "autoname": "field:full_name",
+ "autoname": "field:ic_no",
  "creation": "2026-05-16 03:12:44.791439",
  "default_view": "List",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "sec1",
-  "firstname",
-  "lastname",
-  "fullname_format",
-  "column_break_fbbo",
-  "email",
-  "phone",
+  "passport_tab",
   "sec2",
   "full_name",
   "nationality",
   "ic_no",
+  "id__ic__mykad_copy",
   "passport_no",
   "gender",
   "date_of_birth",
@@ -29,12 +25,22 @@
   "column_break_rvfp",
   "imageviewer",
   "passport_image",
-  "sec3",
-  "age",
-  "column_break_xeko",
-  "age_categ",
-  "column_break_khwi",
-  "titlesalute",
+  "visa_section_section",
+  "sample_visa_photo",
+  "column_break_clyz",
+  "visa_photo",
+  "image_dhha",
+  "personal_info_tab",
+  "sec1",
+  "firstname",
+  "lastname",
+  "fullname_format",
+  "column_break_fbbo",
+  "email",
+  "phone",
+  "country_code",
+  "phone_country",
+  "phone2",
   "sec4",
   "address_street",
   "column_break_opak",
@@ -52,21 +58,42 @@
   "trip_package",
   "trip_group",
   "chat_link",
+  "flight_tab",
+  "flight_announcement",
+  "flight_info_lock",
+  "column_break_spld",
+  "personal_eticket",
+  "section_break_okhi",
   "column_break_ouwv",
   "pnr_no",
+  "pnr_number_view",
   "ticket_type",
+  "column_break_xupn",
   "departure_date",
   "airline",
+  "date_today",
+  "departure_arport",
+  "section_break_zqnl",
   "flight_itinerary",
-  "flight_info_sent",
+  "sec3",
+  "age",
+  "column_break_xeko",
+  "age_categ",
+  "column_break_khwi",
+  "titlesalute",
+  "rooming_tab",
   "sec7",
-  "cabin_type",
-  "cabin_occupancy",
-  "room_category_code",
+  "cabin_reservation",
   "column_break_ujlw",
-  "room_name",
+  "room_category_code",
+  "state_room_no",
   "delegate_no",
-  "guest_no"
+  "guest_no",
+  "sail_date_from",
+  "section_break_sleo",
+  "cabin_is_ready",
+  "manually_notify_cabin_info",
+  "route"
  ],
  "fields": [
   {
@@ -79,7 +106,6 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "First Name",
-   "options": "Name",
    "read_only_depends_on": "eval:doc.passport_checked",
    "reqd": 1
   },
@@ -106,12 +132,14 @@
   {
    "fieldname": "email",
    "fieldtype": "Data",
+   "in_global_search": 1,
    "label": "Email",
    "options": "Email"
   },
   {
    "fieldname": "phone",
    "fieldtype": "Data",
+   "in_global_search": 1,
    "label": "Phone",
    "options": "Phone"
   },
@@ -123,8 +151,8 @@
   {
    "fieldname": "full_name",
    "fieldtype": "Data",
+   "in_global_search": 1,
    "label": "Full Name",
-   "options": "Name",
    "read_only": 1,
    "read_only_depends_on": "eval:doc.passport_checked",
    "unique": 1
@@ -139,12 +167,17 @@
   {
    "fieldname": "ic_no",
    "fieldtype": "Data",
+   "in_global_search": 1,
    "label": "ID / IC / Mykad",
-   "read_only_depends_on": "eval:doc.passport_checked"
+   "read_only_depends_on": "eval:doc.passport_checked",
+   "reqd": 1,
+   "unique": 1
   },
   {
    "fieldname": "passport_no",
    "fieldtype": "Data",
+   "in_global_search": 1,
+   "in_list_view": 1,
    "label": "Passport No.",
    "read_only_depends_on": "eval:doc.passport_checked"
   },
@@ -292,11 +325,13 @@
    "depends_on": "eval:!(doc.partner_relationship===\"I am solo traveller\" \n       || doc.partner_relationship===\"I am the husband\" \n       || doc.partner_relationship===\"I am the main contact\")",
    "fieldname": "partner_fullname",
    "fieldtype": "Data",
+   "in_global_search": 1,
    "label": "Partner / Sponsor Full Name"
   },
   {
    "fieldname": "sec6",
    "fieldtype": "Section Break",
+   "hide_border": 1,
    "label": "Trip Info"
   },
   {
@@ -322,29 +357,35 @@
    "fieldtype": "Column Break"
   },
   {
+   "depends_on": "eval:doc.flight_info_lock===0",
    "fieldname": "pnr_no",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
+   "in_global_search": 1,
    "label": "PNR Number",
-   "read_only_depends_on": "eval:doc.flight_info_sent"
+   "options": "Flight Information",
+   "search_index": 1
   },
   {
+   "fetch_from": "pnr_no.departure_date",
    "fieldname": "departure_date",
-   "fieldtype": "Data",
+   "fieldtype": "Date",
    "label": "Flight Departure Date",
-   "read_only_depends_on": "eval:doc.flight_info_sent"
+   "read_only_depends_on": "eval:doc.flight_info_lock"
   },
   {
+   "fetch_from": "pnr_no.airline",
    "fieldname": "airline",
    "fieldtype": "Select",
    "label": "Airline",
-   "options": "\nEmirates Airline\nTurkish Airlines\nQatar Airways\nSaudi Airline\nOman AIr\nOther",
-   "read_only_depends_on": "eval:doc.flight_info_sent"
+   "options": "\nTurkish Airlines\nTurkish Airline\nQatar Airways\nEmirates Airlines\nEmirates Airline",
+   "read_only_depends_on": "eval:doc.flight_info_lock"
   },
   {
+   "fetch_from": "pnr_no.flight_itinerary",
    "fieldname": "flight_itinerary",
    "fieldtype": "Text Editor",
    "label": "Flight Itinerary",
-   "read_only_depends_on": "eval:doc.flight_info_sent"
+   "read_only_depends_on": "eval:doc.flight_info_lock"
   },
   {
    "fieldname": "sec7",
@@ -352,41 +393,31 @@
    "label": "Cabin And Accomodation"
   },
   {
-   "fieldname": "cabin_type",
-   "fieldtype": "Select",
-   "label": "Cabin Type",
-   "options": "\nBalcony Cabin\nSuperior Balcony Cabin\nSeaview Cabin\nSuperior Seaview Cabin\nInterior Cabin\nKhuzama Presidential Villa\nKhuzama Superior Suite\nOthers"
-  },
-  {
-   "fieldname": "cabin_occupancy",
-   "fieldtype": "Select",
-   "label": "Cabin Occupancy",
-   "options": "\nSingle\nDouble\nTriple\nQuad\nFive\nSix"
-  },
-  {
    "fieldname": "column_break_ujlw",
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "room_name",
-   "fieldtype": "Data",
-   "label": "State Room"
-  },
-  {
+   "fetch_from": "cabin_reservation.stateroom_category",
    "fieldname": "room_category_code",
-   "fieldtype": "Select",
+   "fieldtype": "Autocomplete",
    "label": "Room Category Code",
-   "options": "\nPV\nSS\nBSC\nBC\nIC\nSC"
+   "options": "\nBC\nSC\nIC\nSS\nBSC\nPV",
+   "read_only_depends_on": "cabin_is_ready"
   },
   {
+   "fetch_from": "cabin_reservation.delegate_no",
    "fieldname": "delegate_no",
-   "fieldtype": "Int",
-   "label": "Room Delegate No"
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "label": " Delegate No",
+   "read_only_depends_on": "cabin_is_ready"
   },
   {
+   "fetch_from": "cabin_reservation.guest_no",
    "fieldname": "guest_no",
-   "fieldtype": "Int",
-   "label": "Guest No"
+   "fieldtype": "Data",
+   "label": "Guest No",
+   "read_only_depends_on": "cabin_is_ready"
   },
   {
    "fieldname": "chat_link",
@@ -395,24 +426,209 @@
    "read_only_depends_on": "eval:doc.flight_info_sent"
   },
   {
-   "default": "0",
-   "fieldname": "flight_info_sent",
-   "fieldtype": "Check",
-   "label": "Flight Info Sent"
-  },
-  {
+   "fetch_from": "pnr_no.ticket_type",
    "fieldname": "ticket_type",
    "fieldtype": "Select",
    "label": "Ticket Type",
    "options": "\nGIT\nFIT",
-   "read_only_depends_on": "eval:doc.flight_info_sent"
+   "read_only_depends_on": "eval:doc.flight_info_lock"
+  },
+  {
+   "depends_on": "ic_no",
+   "fieldname": "id__ic__mykad_copy",
+   "fieldtype": "Read Only",
+   "is_virtual": 1,
+   "label": "ID / IC / Mykad (View)",
+   "options": "doc.ic_no",
+   "read_only_depends_on": "eval:doc.passport_checked",
+   "unique": 1
+  },
+  {
+   "fieldname": "personal_info_tab",
+   "fieldtype": "Tab Break",
+   "label": "Personal Info"
+  },
+  {
+   "fieldname": "section_break_okhi",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "passport_tab",
+   "fieldtype": "Tab Break",
+   "label": "Passport"
+  },
+  {
+   "fieldname": "flight_tab",
+   "fieldtype": "Tab Break",
+   "label": "Flight"
+  },
+  {
+   "default": "No Action",
+   "fieldname": "flight_announcement",
+   "fieldtype": "Select",
+   "label": "Flight Announcement ",
+   "options": "No Action\nFlight Confirmation\nFlight Retime\nFlight eTicket"
+  },
+  {
+   "fieldname": "column_break_spld",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_xupn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_zqnl",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "rooming_tab",
+   "fieldtype": "Tab Break",
+   "label": "Rooming"
+  },
+  {
+   "fetch_from": "cabin_reservation.stateroom_no",
+   "fieldname": "state_room_no",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "label": "State Room No",
+   "read_only_depends_on": "cabin_is_ready"
+  },
+  {
+   "fieldname": "cabin_reservation",
+   "fieldtype": "Link",
+   "label": "Cabin Reservation",
+   "options": "Rooming Aroya",
+   "read_only_depends_on": "cabin_is_ready"
+  },
+  {
+   "fieldname": "personal_eticket",
+   "fieldtype": "Attach",
+   "label": "Individu eTicket",
+   "read_only_depends_on": "flight_info_lock"
+  },
+  {
+   "default": "0",
+   "fieldname": "flight_info_lock",
+   "fieldtype": "Check",
+   "label": "Flight Info Lock / Unlock"
+  },
+  {
+   "depends_on": "eval:doc.flight_info_lock===1",
+   "fieldname": "pnr_number_view",
+   "fieldtype": "Data",
+   "is_virtual": 1,
+   "label": "PNR Number Info",
+   "options": "doc.pnr_no"
+  },
+  {
+   "default": "Today",
+   "fetch_from": "pnr_no.date_update_on",
+   "fieldname": "date_today",
+   "fieldtype": "Date",
+   "label": "Information Updated On"
+  },
+  {
+   "fetch_from": "pnr_no.departure_airport",
+   "fieldname": "departure_arport",
+   "fieldtype": "Select",
+   "label": "Departure Airport",
+   "options": "\nKLIA 1 (KUL)\nKLIA 2 (KUL2)\nChangi (SIN)\nChangi 2(SIN2)"
+  },
+  {
+   "fieldname": "section_break_sleo",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "cabin_is_ready",
+   "fieldtype": "Check",
+   "label": "Cabin is ready"
+  },
+  {
+   "default": "No Action",
+   "fieldname": "manually_notify_cabin_info",
+   "fieldtype": "Select",
+   "label": "Manually Notify Cabin Info",
+   "options": "No Action\nSend Cabin Info"
+  },
+  {
+   "fetch_from": "cabin_reservation.sail_date_from",
+   "fieldname": "sail_date_from",
+   "fieldtype": "Date",
+   "label": "Sail Date From",
+   "read_only_depends_on": "cabin_is_ready"
+  },
+  {
+   "fieldname": "country_code",
+   "fieldtype": "Data",
+   "label": "Phone (Country Code)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "phone2",
+   "fieldtype": "Data",
+   "label": "Phone (National)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "phone_country",
+   "fieldtype": "Data",
+   "label": "Phone (Country)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data"
+  },
+  {
+   "description": "<p>\n    To make sure your photo is accepted, please follow these simple steps. \n    Think of it as presenting yourself in a respectful and professional way.\n  </p>\n  <ul>\n    <li>Use a plain white background so your face is clear and easy to see.</li>\n    <li>Kindly remove your glasses \u2014 we want your eyes to be visible without reflection.</li>\n    <li>Keep a calm, formal expression. A gentle smile is fine, but avoid showing teeth.</li>\n    <li>For men: please do not wear hats or head coverings.</li>\n    <li>For women: a headscarf (tudung) is welcome and encouraged.</li>\n  </ul>\n  <p>\n    These guidelines are here to help you \u2014 following them ensures your application \n    goes smoothly without delays. Thank you for taking the time to prepare your photo carefully.\n  </p>",
+   "fieldname": "visa_photo",
+   "fieldtype": "Attach Image",
+   "label": "Visa Photo"
+  },
+  {
+   "fieldname": "image_dhha",
+   "fieldtype": "Image",
+   "is_virtual": 1,
+   "options": "visa_photo"
+  },
+  {
+   "fieldname": "visa_section_section",
+   "fieldtype": "Section Break",
+   "label": "Visa Section"
+  },
+  {
+   "fieldname": "sample_visa_photo",
+   "fieldtype": "HTML",
+   "label": "Sample Visa Photo",
+   "options": "<img src=\"https://biz.rpwp.my/files/Jj3kBuL.png\" style=\"width:100%\">"
+  },
+  {
+   "fieldname": "column_break_clyz",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "image_field": "passport_image",
- "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2026-05-26 00:22:29.784399",
+ "is_published_field": "cabin_is_ready",
+ "links": [
+  {
+   "link_doctype": "Traveller Health",
+   "link_fieldname": "ic_no",
+   "table_fieldname": "ic_no"
+  },
+  {
+   "link_doctype": "Flight",
+   "link_fieldname": "pnr_no",
+   "table_fieldname": "pnr_no"
+  },
+  {
+   "link_doctype": "Rooming Aroya",
+   "link_fieldname": "id_no"
+  }
+ ],
+ "modified": "2026-07-24 16:47:48.602147",
  "modified_by": "Administrator",
  "module": "Traveller Management",
  "name": "Passport Traveller",
@@ -457,11 +673,15 @@
   }
  ],
  "protect_attached_files": 1,
+ "route": "traveller-view",
  "row_format": "Dynamic",
  "rows_threshold_for_grid_search": 20,
- "search_fields": "full_name,ic_no,passport_no",
+ "search_fields": "full_name,ic_no,passport_no,state_room_no",
+ "show_name_in_global_search": 1,
+ "show_title_field_in_link": 1,
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],
- "title_field": "full_name"
+ "title_field": "full_name",
+ "track_changes": 1
 }

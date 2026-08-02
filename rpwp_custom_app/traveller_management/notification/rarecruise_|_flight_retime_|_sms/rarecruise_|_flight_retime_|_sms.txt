@@ -1,0 +1,6 @@
+Hi {{ doc.firstname }},
+Your flight schedule has CHANGED!
+Please check your email at {{ doc.email }} for more info.
+
+Regards
+RARECRUISE.

@@ -1,0 +1,168 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "field:ic_no",
+ "creation": "2026-06-08 07:56:13.469223",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "ic_no",
+  "full_name",
+  "passportno",
+  "age",
+  "gender",
+  "trip_group",
+  "pnr",
+  "column_break_ywag",
+  "imageview",
+  "passport_image",
+  "section_break_ysca",
+  "medical_history_allergic",
+  "medication_list"
+ ],
+ "fields": [
+  {
+   "fieldname": "ic_no",
+   "fieldtype": "Link",
+   "label": "IC Number",
+   "options": "Passport Traveller",
+   "unique": 1
+  },
+  {
+   "fieldname": "medical_history_allergic",
+   "fieldtype": "Text Editor",
+   "in_list_view": 1,
+   "label": "Medical History / Allergic"
+  },
+  {
+   "fieldname": "medication_list",
+   "fieldtype": "Table",
+   "in_standard_filter": 1,
+   "label": "List of medication",
+   "options": "Traveller Health Medication"
+  },
+  {
+   "fieldname": "section_break_ysca",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_ywag",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "ic_no.passport_no",
+   "fieldname": "passportno",
+   "fieldtype": "Data",
+   "label": "Passport No"
+  },
+  {
+   "fetch_from": "ic_no.full_name",
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Full Name"
+  },
+  {
+   "fetch_from": "ic_no.age",
+   "fieldname": "age",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Age"
+  },
+  {
+   "fetch_from": "ic_no.gender",
+   "fieldname": "gender",
+   "fieldtype": "Data",
+   "label": "Gender"
+  },
+  {
+   "fieldname": "imageview",
+   "fieldtype": "Image",
+   "is_virtual": 1,
+   "options": "passport_image"
+  },
+  {
+   "fetch_from": "ic_no.passport_image",
+   "fieldname": "passport_image",
+   "fieldtype": "Attach Image",
+   "hidden": 1,
+   "label": "Passport Image"
+  },
+  {
+   "fetch_from": "ic_no.trip_group",
+   "fieldname": "trip_group",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Trip Group"
+  },
+  {
+   "fetch_from": "ic_no.pnr_no",
+   "fieldname": "pnr",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "label": "PNR"
+  }
+ ],
+ "grid_page_length": 50,
+ "links": [
+  {
+   "link_doctype": "Passport Traveller",
+   "link_fieldname": "ic_no",
+   "table_fieldname": "ic_no"
+  }
+ ],
+ "modified": "2026-06-11 06:41:46.604010",
+ "modified_by": "Administrator",
+ "module": "Traveller Management",
+ "name": "Traveller Health",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Tour Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Tour Operator",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "protect_attached_files": 1,
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "full_name"
+}

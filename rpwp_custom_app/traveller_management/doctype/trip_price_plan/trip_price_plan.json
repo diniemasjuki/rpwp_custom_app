@@ -1,0 +1,84 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "field:package_type",
+ "creation": "2026-06-10 03:57:07.175549",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "package_type",
+  "status",
+  "column_break_rywo",
+  "age_price",
+  "upperberth_price",
+  "children_price",
+  "infant"
+ ],
+ "fields": [
+  {
+   "fieldname": "package_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Package Type",
+   "options": "Room Type",
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_rywo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "age_price",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Adult",
+   "precision": "2"
+  },
+  {
+   "fieldname": "children_price",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Children",
+   "precision": "2"
+  },
+  {
+   "fieldname": "infant",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Infant",
+   "precision": "2"
+  },
+  {
+   "default": "active",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "active\nunlisted\ndeactivated"
+  },
+  {
+   "fieldname": "upperberth_price",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Upperberth",
+   "precision": "2"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-06-10 06:18:06.905178",
+ "modified_by": "Administrator",
+ "module": "Traveller Management",
+ "name": "Trip Price Plan",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

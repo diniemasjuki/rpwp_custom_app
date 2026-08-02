@@ -1,0 +1,61 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "creation": "2026-06-09 13:39:13.426924",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "room_type",
+  "age_category",
+  "traveller_info",
+  "ticket_price"
+ ],
+ "fields": [
+  {
+   "fieldname": "traveller_info",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Traveller Info",
+   "options": "Passport Traveller"
+  },
+  {
+   "fieldname": "age_category",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Age Category",
+   "options": "Adult\nInfant",
+   "reqd": 1
+  },
+  {
+   "fieldname": "room_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Room Type",
+   "options": "Room Type",
+   "reqd": 1
+  },
+  {
+   "fieldname": "ticket_price",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Ticket Price"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-06-09 15:55:48.060822",
+ "modified_by": "Administrator",
+ "module": "Traveller Management",
+ "name": "Booking Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
